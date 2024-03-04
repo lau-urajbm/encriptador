@@ -21,10 +21,19 @@ function mostrarMensaje(mensaje){
     var element = container.querySelector(".procesado")
     var imagen = container.querySelector("img")
     var nuevoP = document.createElement("p")
+    
     nuevoP.classList.add("procesado")
     nuevoP.innerHTML = mensaje
     if(imagen){
         container.removeChild(imagen)
+    }
+    if(!container.querySelector(".copiar")){
+        var newButton = document.createElement("button")
+        console.log("se creó")
+        newButton.setAttribute("onClick", "copiarTexto()")
+        newButton.classList.add("copiar")
+        newButton.innerHTML = "Copiar"
+        container.appendChild(newButton)
     }
    
 
